@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form method="POST" action="../Objetos/GuardarProducto.php">
+    <p>Nombre<input type="text" name="NombreProd" id="NombreProd"/></p>
+    <p>Codigo producto<input type="number" name="CodigoProducto" id="CodigoProducto" /></p>    
+    <p>Descripcion<input type="text" name="DescripcionProd" id="DescripcionProd" /></p>    
+    <p>Precio Venta<input type="number" name="PrecioUnitario" id="PrecioUnitario" /></p>
+    <p>Precio de Compra<input type="number" name="PrecioCompra" id="PrecioCompra" /></p> 
+    <p>Can Disponible<input type="number" name="Cantidad_Disponible" id="Cantidad_Disponible" /></p>   
+    <p>Categoria<input type="number" name="ID_CategoriaFK" id="ID_CategoriaFK" /></p>
+    <p><input type="submit" value="Enviar"></p>
+    </form>
+</body>
+</html>
