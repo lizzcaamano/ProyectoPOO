@@ -1,8 +1,8 @@
 <?php    
     require_once('../Clases/productos.php');
-    require_once('../Clases/Clientes.php');
+    require_once('../Clases/Proveedores.php');
     $productos=productos::mostrarProductos();
-    $clientes=clientes::mostrarClientes();
+    $Proveedores=Proveedores::mostrarProveedor();
 ?>
 
 <!DOCTYPE html>
@@ -13,11 +13,11 @@
     <title>Formulario</title>
 </head>
 <body>
-    <form method="POST" action="../Objetos/GuardarFactura.php">
-    <p>Fecha<input type="date" name="Fecha" id="Fecha"/></p>  
-    <p>Cantidad<input type="number" name="Cantidad" id="Cantidad" /></p>    
-    <p>Total<input type="number" name="Total" id="Total" /></p>
-
+    <form method="POST" action="../Objetos/GuardarCompra.php">
+    <p>CantidadCompra<input type="date" name="CantidadCompra" id="Fecha"/></p>  
+    <p>Precio_Compra<input type="number" name="Precio_Compra" id="Cantidad" /></p>    
+    <p>Precio_Venta<input type="number" name="Precio_Venta" id="Total" /></p>
+    
     <select class="form-select form-select mb-3" name="ID_ProductoFK">
         <option>Seleccione</option>
             <?php
@@ -27,11 +27,11 @@
             ?>
         </select>
        <p>Cliente</p>
-        <select class="form-select form-select mb-3" name="ID_ClienteFK">
+        <select class="form-select form-select mb-3" name="ID_ProveedorFK">
         <option>Seleccione</option>
             <?php
-            foreach ($clientes as $cliente) {
-                echo "<option value='" . $cliente['ID_Cliente'] . "'>" . $cliente['NombreCli'] . "</option>";
+            foreach ($Proveedores as $proveedor) {
+                echo "<option value='" . $proveedor['ID_Proveedor'] . "'>" . $proveedor['NombreProv'] . "</option>";
             }
             ?>
         </select>

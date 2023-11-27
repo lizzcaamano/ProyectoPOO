@@ -66,7 +66,7 @@ class Clientes {
 
     public static function mostrarClientes(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT NombreCli, DireccionCli, Telefono  FROM ' . self::TABLA . ' ORDER BY NombreCli');
+        $consulta = $conexion->prepare('SELECT ID_Cliente, NombreCli, DireccionCli, Telefono  FROM ' . self::TABLA . ' ORDER BY NombreCli');
         $consulta -> execute();
         $registros = $consulta->fetchAll();
         return $registros;

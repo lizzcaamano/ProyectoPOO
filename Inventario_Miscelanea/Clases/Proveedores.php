@@ -79,7 +79,7 @@ class Proveedores {
 
     public static function mostrarProveedor(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT NombreProv, DireccionProv, Telefono, Correo FROM ' . self::TABLA . ' ORDER BY NombreProv');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA . ' ORDER BY NombreProv');
         $consulta -> execute();
         $registros = $consulta->fetchAll();
         return $registros;
